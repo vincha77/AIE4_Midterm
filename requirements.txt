@@ -1,0 +1,14 @@
+langchain
+langchain-openai 
+langchain_core==0.2.38
+langchain-community 
+langchainhub
+langchain-qdrant
+langchain_huggingface
+langchain-text-splitters
+openai
+pymupdf
+faiss-cpu
+sentence_transformers
+datasets 
+pyarrow==14.0.1

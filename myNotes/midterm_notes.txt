@@ -1,0 +1,56 @@
+TASK 1
+------
+Review the two PDFs and decide how best to chunk up the data with a single strategy to optimally answer the variety of questions you expect to receive from people.
+
+Notes on PDFs
+-------------
+a.  2022: Blueprint for an AI Bill of Rights: Making Automated Systems Work for the American People
+    This is really two docs in one
+    first doc sets up five principles and practices
+    second one is labeled a technical companion; it expands on each principle as well as how to operationalize it; each principle is reiterated, followed by an articulation of what the principle is important, what should be expected of automated systems in regard to following this principle, and examples of how these principles can move into practice.
+
+b.  2024: National Institute of Standards and Technology (NIST) Artificial Intelligent Risk Management Framework
+    First part describes the risks as well as Trustworthy AI characteristics to mitigate the risk
+    Second part, in tabular form, describes mitigation plan for each risks; each risk is identified in the table by a serial number based on the first part of the document rather than by the actual name of the risk.
+
+
+Likely user questions
+1. What is the AI Bill of Rights?
+2. What are the set of five principles in the AI bill of Rights?
+3. Who led the formulation of the AI Bill of Rights?
+4. What process was followed to develop the AI Bill of Rights?
+5. What rights do I have to ensure 
+	- safe and effective systems
+	- algorithmic discrimination protection 
+	- data privacy 
+	- that I am given adequate explanation and notice re the use of AI systems
+	- recourse to alternatives and remedy problems that I encounter
+6. How can organizations put into practice
+	- data privacy
+	- etc.
+
+7. How can foreign actors spread misinformation through the use of AI?
+8. How can US entities counter the use of AI to spread misinformation during the elections?
+
+Second document
+9. According to NIST, what are the major risks of generative AI?
+10. How can AI developers reduce the risk of hallucinations?
+11. What can be done to prevent AI from being used to harm society?
+12. Does generative AI have bad environmental impacts?
+13. How can we prevent the bad environmental impact of AI?
+14. How can we safeguard against AI generating toxic or harmful content?
+15. Is AI likely to be biased against certain types of people?  If so, how can we prevent this?
+
+It is clear that chunking strategies should account for the semantics in the document, as well as the fact that there are strong connections between the first and second parts of the document.  This comment applies to both documents in this assignment.
+
+CHUNKING STRATEGY
+I will examine two alternatives:
+	(a) use the Swiss-army-knife chunking approach: recursive character text splitter
+	(b) semantic chunking
+
+WHY I CHOSE THESE TWO CHUNKING STRATEGIES
+1. RecursiveCharacterTextSplitter: if the chunk_size and chunk_overlap are set to reasonable numbers, this approach is surprisingly effective across a range of document content.  It is cost-effective, relatively easy to tune if needed, is well-suited for answering queries that are SIMPLE and those that require MULTI-CONTEXT.  I'm not sure if it performs well with REASONING queries.
+
+2. Semantic chunking has great appeal as it groups content that is contiguous and semantically similar in a single chunk.  To that end, the chunk sizes may be rather uneven.  It avoids artifically splitting content that may be very similar into multiple chunks which would make the retriever work harder during the retrieval process.  The downside is that it is not as cost-effective as it requires the use of an LLM.  It is likely to perform well for MULTI-CONTEXT and potentially queries that require REASONING.
+
+

@@ -1,0 +1,20 @@
+What process was followed to generate the AI Bill of Rights?
+What is the AI Bill of Rights?
+What are the set of five principles in the AI bill of Rights?
+Who led the formulation of the AI Bill of Rights?
+What rights do I have to ensure protection against algorithmic discrimination?
+What rights do I have to ensure that my data stays private?
+What rights do I have to ensure safe and effective systems?
+What rights do I have to ensure that I am given adequate explanation and notice re the use of AI systems?
+What rights do I have to ensure ecourse to alternatives and remedy problems that I encounter?
+How can organizations put data privacy into practice?
+How can organizations put into practice protection against algorithmic discrimination
+How can foreign actors spread misinformation through the use of AI?
+How can US entities counter the use of AI to spread misinformation during the elections?
+According to NIST, what are the major risks of generative AI?
+How can AI developers reduce the risk of hallucinations?
+What can be done to prevent AI from being used to harm society?
+Does generative AI have bad environmental impacts?
+How can we prevent the bad environmental impact of AI?
+How can we safeguard against AI generating toxic or harmful content?
+Is AI likely to be biased against certain types of people?  If so, how can we prevent this?
