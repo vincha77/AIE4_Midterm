@@ -6,9 +6,12 @@ langchainhub
 langchain-qdrant
 langchain_huggingface
 langchain-text-splitters
+langchain_experimental
+ragas
 openai
 pymupdf
 faiss-cpu
 sentence_transformers
 datasets 
 pyarrow==14.0.1
+chainlit==0.7.700

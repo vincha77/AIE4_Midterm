@@ -30,7 +30,7 @@ from langchain_qdrant import QdrantVectorStore
 from qdrant_client import QdrantClient
 from qdrant_client.http.models import Distance, VectorParams
 
-# from langchain.retrievers.multi_query import MultiQueryRetriever
+from langchain.retrievers.multi_query import MultiQueryRetriever
 from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_core.documents import Document
 from datasets import Dataset
@@ -125,17 +125,22 @@ class AdvancedRetriever:
                  vectorstore):
         self.vectorstore = vectorstore
         return
-        
+
     def set_up_simple_retriever(self):
-        simple_retriever = self.vectorstore.as_retriever()
+        simple_retriever = self.vectorstore.as_retriever(
+            search_type='similarity', 
+            search_kwargs={
+                'k': 5
+            }
+        )
         return simple_retriever
     
-    # def set_up_multi_query_retriever(self, llm):
-    #     retriever = self.set_up_simple_retriever()
-    #     advanced_retriever = MultiQueryRetriever.from_llm(
-    #         retriever=retriever, llm=llm
-    #     )
-    #     return advanced_retriever
+    def set_up_multi_query_retriever(self, llm):
+        retriever = self.set_up_simple_retriever()
+        advanced_retriever = MultiQueryRetriever.from_llm(
+            retriever=retriever, llm=llm
+        )
+        return advanced_retriever
 
 
 def run_and_eval_rag_pipeline(location, collection_name, embed_dim, text_splits, embeddings,

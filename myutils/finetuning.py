@@ -145,10 +145,10 @@ class PrepareDataForFinetuning(GenerateQuestionsForContexts):
     def __init__(self, 
                  chunk_size=None, chunk_overlap=None, len_function=None,
                  lcdocuments=None, run_optional_text_splitter=False,
-                 all_splits=None, train_val_test_fraction=[0.80, 0.10, 0.10],
+                 all_splits=None, train_val_test_size=[10, 5, 5],
                  train_val_test_split_type='random',
                  random_seed=69, qa_chat_model_name="gpt-4o-mini",
-                 n_questions=3, batch_size=64):
+                 n_questions=2, batch_size=5):
     
         super().__init__(qa_chat_model_name=qa_chat_model_name,
                          n_questions=n_questions)
@@ -162,7 +162,10 @@ class PrepareDataForFinetuning(GenerateQuestionsForContexts):
 
         self.all_doc_splits = all_splits
 
-        self.train_val_test_fraction = train_val_test_fraction
+        self.train_val_test_size = train_val_test_size
+        self.n_train = self.train_val_test_size[0]
+        self.n_val = self.train_val_test_size[1]
+        self.n_test = self.train_val_test_size[2]
         self.train_val_test_split_type = train_val_test_split_type
 
         self.random_seed = random_seed
@@ -183,13 +186,6 @@ class PrepareDataForFinetuning(GenerateQuestionsForContexts):
         for docsplit in self.all_doc_splits:
             id, id_set  = self.get_unique_id(id_set)
             docsplit.metadata["id"] = id
-        return self
-    
-    def train_val_test_sample_size(self):
-        self.n_obs = len(self.all_doc_splits)
-        self.n_train = int(self.n_obs * self.train_val_test_fraction[0])
-        self.n_val = int(self.n_obs * self.train_val_test_fraction[1])
-        self.n_test = self.n_obs - (self.n_train + self.n_val)
         return self
 
     def simple_train_val_test_splits(self):       
@@ -271,10 +267,6 @@ class PrepareDataForFinetuning(GenerateQuestionsForContexts):
         # each chunk i.e., context gets a unique id
         self.attach_unique_ids_to_docs()
 
-        # generate number of train, val and test samples
-        # based on n_obs and fractions
-        self.train_val_test_sample_size()
-
         # split into train, val and test - either random or simple slicing
         if self.train_val_test_split_type.upper() == 'RANDOM':
             self.randomized_train_val_test_splits()
@@ -288,7 +280,7 @@ class PrepareDataForFinetuning(GenerateQuestionsForContexts):
         # save train, val and test datasets in jsonl format
         self.save_train_val_test_dataset_to_jsonl()
         return self
-    
+
 
 class FineTuneModel:
     def __init__(self,
