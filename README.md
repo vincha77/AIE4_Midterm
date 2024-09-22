@@ -4,11 +4,8 @@ Vinod Chandrashekaran
 September 2024
 
 
-$${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
+$${\color{lightgreen} \space In \space case \space you \space are \space interested \space in \space reviewing \space the \space code, \space these \space two \space notebooks \space contain \space all \space the \space work \space done \space for \space the \space Midterm \space Assignment.}$$
 
-$${\color{lightgreen}In case you are interested in reviewing the code, these two notebooks contain all the work done for the Midterm Assignment.}$$
-
-In case you are interested in reviewing the code, these two notebooks contain all the work done for the Midterm Assignment.
 
 [Main Notebook](vc_aie4_midterm_rag_and_ragas_pipelines.ipynb) : contains all the RAG setup and RAG/RAGAS evaluations.
 
@@ -22,20 +19,19 @@ Note that both notebooks make heavy use of the modules I have prepared by refact
 This document is part of the submission for the AIE Cohort#4 midterm assignment!  I am using this document to formally write out the responses to the deliverables stated on the assignment page.  
 
 
-A copy of these notes has been posted to this repo and is available as a pdf version here.
+A copy of these notes has been posted to this repo and is available as a pdf version [here](myNotes/vc_aie4_midterm_assignment_document_with_responses_to_Tasks_and_Questions.pdf).
 
-https://github.com/vincha77/AIE4_Midterm/blob/main/myNotes/vc_aie4_midterm_assignment_document_with_responses_to_Tasks_and_Questions.pdf
 
 The PDF version posted here may be a bit more readable!  
 
-However, if you want to get access to the embedded links, those links are not working on the pdf version!!! You can find the links in the copy below!!
+
+_However, if you want to get access to the embedded links, those links are not working on the pdf version!!! You can find the links either in the Word doc (see next sentence) OR by continuing to review the entire README file below!!_
 
 
-You can also access the MS Word version here - the raw form of the Word doc can be downloaded and the embedded links are active there!
-
-https://github.com/vincha77/AIE4_Midterm/blob/main/myNotes/vc_aie4_midterm_assignment_document_with_responses_to_Tasks_and_Questions.docx
+You can also access the MS Word version [here](myNotes/vc_aie4_midterm_assignment_document_with_responses_to_Tasks_and_Questions.docx) - the raw form of the Word doc can be downloaded and the embedded links are active there!
 
 
+-----------------------
 
 # My Final Submission
 
@@ -76,6 +72,7 @@ Here is a link to Loom video showing the prototype app in a live demo:
 https://www.loom.com/share/3396b23b33f445ffb531ddcc8858487e
 
 
+----------------
 
 
 # Task 1: Dealing with the Data
@@ -165,6 +162,7 @@ Advantage: It avoids artificially splitting content that may be very similar int
 
 The downside is that it is not as cost-effective as it requires the use of an LLM during the chunking process.  It is likely to perform well for Multi-Context and potentially queries that require Reasoning.
 
+-----------------
 
 
 # Task 2: Building a Quick End-to-End Prototype
@@ -206,6 +204,7 @@ Here’s my stack:
 •	Web hosting:  Hugging Face spaces: HF has set up HF spaces as a Github repo that automatically detects when there are pushes or changes to the underlying app and immediately restarts the app.  For our purposes, this web hosting service was quite adequate.
  
 
+----------------------
 
 # Task 3: Creating a Golden Test Data set
 Generate a synthetic test data set and baseline an initial evaluation.
@@ -237,7 +236,7 @@ b.	If we want to use open-source models like snowflake-arctic-embed-m in special
 
 c.	We enter the finetuning process [below] with healthy skepticism as the base model does not perform well and its context window is rather small (512 compared to 8191).  Nonetheless, it is worth a shot.
 
- 
+ ---------------------
 
 # Task 4: Fine-Tuning Open-Source Embeddings
 Generate synthetic fine-tuning data and complete fine-tuning of the open-source embedding model.
@@ -271,7 +270,9 @@ No-brainer Reason
 
 It is an open-source model so we have access to all parameters and configurations needed for finetuning.
 
- 
+
+-------------------------------- 
+
 
 # Task 5: Assessing Performance
 Assess the performance of 1) the fine-tuned model, and 2) the two proposed chunking strategies.
@@ -321,6 +322,8 @@ RECOMMENDATION
 I would recommend using the ‘finetuned-arctic’ model embeddings in the final version of the app.  In addition to the points above, given that the purpose of the app is to showcase the advances in AI, it makes sense to use the “partially homegrown” embeddings as it can be another illustration of the reach of AI and its potential.
 
 
+----------------------------
+
 
 # Task 6: Managing Your Boss and User Expectations
 You are the SVP of Technology. Given the work done by your team so far, you're now sitting down with the AI Solutions Engineer. You have tasked the solutions engineer to test out the new application with at least 50 different internal stakeholders over the next month.
@@ -358,8 +361,4 @@ a.	Implement persistent on-disk vector databases.  All major vector database pro
 b.	Build separate pipelines to manage the process to ingest documents and other information into vector databases.  Separate this part of the pipeline from the part that deals with querying the database (eg RAG applications).
 
 c.	Improve the architecture of the retrieval process itself.  For example, if there are new versions of previously released documents, then we may need our vector DB to maintain, for audit and other reasons, the older versions of these documents.  In that case, we can put the metadata to work – e.g., identify documents by their release date, or date-added to our vector DB.  Additionally, use metadata in the retrieval process e.g., we select out more recent versions of documents to search for and phase out older documents from the search and retrieval process.
-
-
-
-
 
