@@ -252,15 +252,19 @@ https://huggingface.co/vincha77/finetuned_arctic
 These are the criteria I used:
 
 Parsimony
+
 This model has approximately 110 million parameters, so we can feasibly finetune the model with consumer-grade access to GPU and memory resources.  It can be done very quickly in a Colab notebook, for instance, with access to their GPU.  I chose to use the A100 to speed up the process, but the training would work just as well with other GPUs like T4 etc.
 
 Performance
+
 Despite the far fewer parameters, the model holds its own in terms of performance on benchmark tasks.
 
 Convenient Access
+
 This model is conveniently available via Huggingface, so I could leverage the model hub as well as all the libraries that support access to this type of model (SentenceTransformer) as well as all the training/finetuning capabilities.
 
 No-brainer Reason
+
 It is an open-source model so we have access to all parameters and configurations needed for finetuning.
 
  
