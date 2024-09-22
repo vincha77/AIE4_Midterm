@@ -57,8 +57,11 @@ https://huggingface.co/spaces/vincha77/aie4_midterm_app
 
 
 4.	A public link to your fine-tuned embedding model on Hugging Face.
+
 Here is the link to fine-tuned embedding model on HF hub
+
 Model is called: “vincha77/finetuned_arctic”
+
 https://huggingface.co/vincha77/finetuned_arctic
 
 
