@@ -4,6 +4,10 @@ Vinod Chandrashekaran
 September 2024
 
 
+$${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
+
+$${\color{lightgreen}In case you are interested in reviewing the code, these two notebooks contain all the work done for the Midterm Assignment.}$$
+
 In case you are interested in reviewing the code, these two notebooks contain all the work done for the Midterm Assignment.
 
 [Main Notebook](vc_aie4_midterm_rag_and_ragas_pipelines.ipynb) : contains all the RAG setup and RAG/RAGAS evaluations.
