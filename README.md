@@ -236,7 +236,9 @@ b.	If we want to use open-source models like snowflake-arctic-embed-m in special
 
 c.	We enter the finetuning process [below] with healthy skepticism as the base model does not perform well and its context window is rather small (512 compared to 8191).  Nonetheless, it is worth a shot.
 
- ---------------------
+
+----------------------
+
 
 # Task 4: Fine-Tuning Open-Source Embeddings
 Generate synthetic fine-tuning data and complete fine-tuning of the open-source embedding model.
@@ -271,7 +273,9 @@ No-brainer Reason
 It is an open-source model so we have access to all parameters and configurations needed for finetuning.
 
 
--------------------------------- 
+
+---------------------------
+
 
 
 # Task 5: Assessing Performance
